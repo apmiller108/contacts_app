@@ -10,7 +10,13 @@ class Person
     date_created: Time.now
   }
   def initialize(options = {})
-    if options[:first_name] && options[:last_name]
+    if !options[:first_name] || !options[:last_name]
+      begin
+        raise ArgumentError, "First and Last Name are Required."
+      rescue
+        puts "First and Last Name are Required."
+      end
+    else
       options = DEFAULT_OPTIONS.merge(options)
       @first_name = options[:first_name]
       @last_name = options[:last_name]
@@ -20,8 +26,6 @@ class Person
       @linkedin = options[:linkedin]
       @website = options[:website]
       @date_created = options[:date_created]
-    else
-      print "First and Last Name are Required."
     end
   end
 end

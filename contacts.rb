@@ -4,10 +4,11 @@ require_relative "person_class"
 contact_lib = Contacts.new
 person = Person.new ({
   first_name: "Alex",
-  last_name: "Miller"
+  # last_name: "Miller"
 })
 
 contact_lib.add(person)
 
+p contact_lib
 
-contact_lib.search "alex"
+# contact_lib.search "alex"

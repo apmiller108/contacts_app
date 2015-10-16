@@ -22,7 +22,7 @@ class Contacts
   def search(keyword)
     keyword.downcase
     @contacts.each do |contact|
-      if contact.first_name.downcase.include?(keyword) || contact.last_name.downcase.include?(keyword)
+      if contact.first_name.downcase.include?(keyword)|| contact.last_name.downcase.include?(keyword)
         show contact
       else
         puts "No contacts found"
