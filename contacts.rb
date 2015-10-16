@@ -9,4 +9,5 @@ person = Person.new ({
 
 contact_lib.add(person)
 
-p contact_lib.contacts
+
+contact_lib.search "alex"
