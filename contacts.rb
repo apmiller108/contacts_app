@@ -6,15 +6,21 @@ contact_lib = Contacts.new
 begin
   person_details = {
     first_name: "Alex",
-    last_name: "Miller"
+    last_name: "Miller",
+    email: "apmiller108@yahoo.com",
+    mobile_phone: "319-621-1065"
   }
   person = Person.new(person_details)
 rescue ArgumentError => e
-  puts "You got an \"#{e.message}\" error."
-  puts e.backtrace
+  puts e.message
 end
 
-contact_lib.add(person)
-p contact_lib
 
-# contact_lib.search "alex"
+contact_lib.add(person)
+
+begin
+  keyword = {}
+  contact_lib.s earch({})
+rescue
+  puts "#{keyword} is not valid"
+end
