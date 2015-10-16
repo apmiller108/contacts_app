@@ -11,11 +11,7 @@ class Person
   }
   def initialize(options = {})
     if !options[:first_name] || !options[:last_name]
-      begin
         raise ArgumentError, "First and Last Name are Required."
-      rescue
-        puts "First and Last Name are Required."
-      end
     else
       options = DEFAULT_OPTIONS.merge(options)
       @first_name = options[:first_name]
